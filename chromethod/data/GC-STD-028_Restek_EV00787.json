@@ -1,0 +1,103 @@
+{
+  "method_id": "GC-STD-028",
+  "source": {
+    "standard": "Restek Application",
+    "name": "有机锡化合物 衍生化 GC-FPD 测定",
+    "version": "GC_EV00787",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "四丙基锡",
+      "四丁基锡",
+      "三丁基锡",
+      "二丁基锡",
+      "三戊基锡",
+      "单丁基锡"
+    ],
+    "analyte_category": "有机锡化合物",
+    "matrix": "有机溶剂",
+    "typical_range": "500 pg on-column"
+  },
+  "preparation": {
+    "technique": "衍生化"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "直接",
+    "injection_volume_ul": 3.0,
+    "liner": "Uniliner衬管",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒压",
+    "pressure_psi": 15
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rtx-5",
+      "length_m": 30,
+      "id_mm": 0.32,
+      "film_um": 1.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 100,
+          "time_min": 1
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 10,
+          "target_c": 285,
+          "hold_min": 10
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        1.5,
+        3.0
+      ],
+      "temp_limit_isothermal_c": 350
+    },
+    {
+      "phase": "35%苯基-65%二甲基聚硅氧烷",
+      "brand": "Rtx-35",
+      "length_m": 30,
+      "id_mm": 0.32,
+      "film_um": 1.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 100,
+          "time_min": 1
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 10,
+          "target_c": 285,
+          "hold_min": 10
+        }
+      ],
+      "temp_limit_c": 350,
+      "flow_range_ml_min": [
+        1.5,
+        3.0
+      ],
+      "temp_limit_isothermal_c": 340
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FPD",
+      "temp_c": 250
+    }
+  ],
+  "valves": null
+}

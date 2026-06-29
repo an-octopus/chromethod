@@ -1,0 +1,74 @@
+{
+  "method_id": "GC-STD-003",
+  "source": {
+    "standard": "Restek Application",
+    "name": "进样口维护后污染验证(空白基线)",
+    "version": "GC_EX00956",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "(空白运行,无样品)"
+    ],
+    "analyte_category": "仪器空白/污染验证",
+    "matrix": "无",
+    "typical_range": "—"
+  },
+  "preparation": {
+    "technique": "无"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "不分流",
+    "splitless_hold_min": 0.5,
+    "purge_flow_ml_min": 40,
+    "injection_volume_ul": null,
+    "liner": "4mm ID 直管衬管(含石英棉,IP去活)",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 5.0
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rxi-5ms",
+      "length_m": 30,
+      "id_mm": 0.32,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 50,
+          "time_min": 5
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 30,
+          "target_c": 320,
+          "hold_min": 10
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        1.5,
+        3.0
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 330,
+      "makeup_gas": null,
+      "makeup_flow": null
+    }
+  ],
+  "valves": null
+}

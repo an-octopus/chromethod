@@ -1,0 +1,66 @@
+{
+  "method_id": "GC-STD-013",
+  "source": {
+    "standard": "Restek Application",
+    "name": "硫化物气体 SCD 测定",
+    "version": "GC_AR00861",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "硫化氢",
+      "羰基硫",
+      "甲硫醇",
+      "乙硫醇",
+      "二甲硫醚"
+    ],
+    "analyte_category": "硫化物气体",
+    "matrix": "氦气(气体样品)",
+    "typical_range": "100 ppbv"
+  },
+  "preparation": {
+    "technique": "气体进样阀(SilcoCan采样罐)"
+  },
+  "inlet": {
+    "type": "气体定量环",
+    "temp_c": 30,
+    "mode": "不分流直接",
+    "injection_volume_ul": 1000,
+    "liner": null,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒压",
+    "linear_velocity_cm_s": 48
+  },
+  "columns": [
+    {
+      "phase": "100%二甲基聚硅氧烷",
+      "brand": "Rxi-1ms",
+      "length_m": 30,
+      "id_mm": 0.32,
+      "film_um": 4.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 30,
+          "time_min": null
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        1.5,
+        3.0
+      ]
+    }
+  ],
+  "detectors": [
+    {
+      "type": "SCD",
+      "temp_c": 800
+    }
+  ],
+  "valves": null
+}

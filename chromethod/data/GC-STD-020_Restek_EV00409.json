@@ -1,0 +1,91 @@
+{
+  "method_id": "GC-STD-020",
+  "source": {
+    "standard": "EPA 8081 / Restek Application",
+    "name": "有机氯农药 EPA 8081 GC-ECD (Rtx-1701)",
+    "version": "GC_EV00409",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "四氯间二甲苯(代标)",
+      "α-BHC",
+      "γ-BHC",
+      "七氯",
+      "艾氏剂",
+      "β-BHC",
+      "δ-BHC",
+      "环氧七氯",
+      "硫丹I",
+      "α-氯丹",
+      "γ-氯丹",
+      "4,4'-DDE",
+      "狄氏剂",
+      "异狄氏剂",
+      "4,4'-DDD",
+      "硫丹II",
+      "4,4'-DDT",
+      "异狄氏剂醛",
+      "硫丹硫酸酯",
+      "甲氧氯",
+      "异狄氏剂酮",
+      "十氯联苯(代标)"
+    ],
+    "analyte_category": "有机氯农药(OCPs)",
+    "matrix": "有机溶剂",
+    "typical_range": "80-800 ng/mL"
+  },
+  "preparation": {
+    "technique": "直接进样"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 200,
+    "mode": "直接",
+    "injection_volume_ul": 1.0,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒线速度",
+    "linear_velocity_cm_s": 40
+  },
+  "columns": [
+    {
+      "phase": "14%氰丙基苯基-86%二甲基聚硅氧烷",
+      "brand": "Rtx-1701",
+      "length_m": 30,
+      "id_mm": 0.53,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 150,
+          "time_min": 5
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 4,
+          "target_c": 275,
+          "hold_min": 5
+        }
+      ],
+      "temp_limit_c": 290,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "temp_limit_isothermal_c": 280
+    }
+  ],
+  "detectors": [
+    {
+      "type": "ECD",
+      "temp_c": 275,
+      "sensitivity": "5.12×10^-10 AFS"
+    }
+  ],
+  "valves": null
+}

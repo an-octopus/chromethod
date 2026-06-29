@@ -1,0 +1,95 @@
+{
+  "method_id": "GC-STD-019",
+  "source": {
+    "standard": "Restek Application / EPA 610 类",
+    "name": "多环芳烃(PAHs) GC-FID 测定",
+    "version": "GC_EV1181",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "萘",
+      "2-甲基萘",
+      "1-甲基萘",
+      "苊烯",
+      "苊",
+      "芴",
+      "菲",
+      "蒽",
+      "荧蒽",
+      "芘",
+      "苯并[a]蒽",
+      "屈",
+      "三亚苯",
+      "苯并[b]荧蒽",
+      "苯并[k]荧蒽",
+      "苯并[j]荧蒽",
+      "苯并[a]芘",
+      "茚并[1,2,3-cd]芘",
+      "二苯并[a,h]蒽",
+      "苯并[ghi]苝"
+    ],
+    "analyte_category": "多环芳烃(PAHs)",
+    "matrix": "二氯甲烷溶液",
+    "typical_range": "20 ng/µL"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "二氯甲烷"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 275,
+    "mode": "分流",
+    "split_ratio": "20:1",
+    "split_vent_flow_ml_min": 42,
+    "injection_volume_ul": 1.0,
+    "liner": "4mm 分流衬管含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "H2",
+    "control": "恒流",
+    "flow_rate_ml_min": 2.0
+  },
+  "columns": [
+    {
+      "phase": "50%苯基-50%二甲基聚硅氧烷",
+      "brand": "Rxi-17",
+      "length_m": 15,
+      "id_mm": 0.25,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 80,
+          "time_min": 1
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 15,
+          "target_c": 320,
+          "hold_min": 2
+        }
+      ],
+      "temp_limit_c": 350,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 340
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 340,
+      "makeup_gas": "N2",
+      "makeup_flow": 50,
+      "data_rate_hz": 20
+    }
+  ],
+  "valves": null
+}

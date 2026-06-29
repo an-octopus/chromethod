@@ -1,0 +1,70 @@
+{
+  "method_id": "GC-STD-022",
+  "source": {
+    "standard": "Restek Application",
+    "name": "CFC-134a 制冷剂纯度分析",
+    "version": "GC_GN1155",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "CFC-115",
+      "CFC-12",
+      "CFC-22",
+      "CFC-134a"
+    ],
+    "analyte_category": "氯氟烃(CFCs)/制冷剂",
+    "matrix": "气体(纯品)",
+    "typical_range": "% 级"
+  },
+  "preparation": {
+    "technique": "气体进样"
+  },
+  "inlet": {
+    "type": "SSL",
+    "mode": "分流",
+    "injection_volume_ul": 500,
+    "liner": null,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "—"
+  },
+  "columns": [
+    {
+      "phase": "氧化铝 PLOT (气固色谱)",
+      "brand": "Rt-Alumina BOND/CFC",
+      "length_m": 30,
+      "id_mm": 0.53,
+      "film_um": null,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 80,
+          "time_min": 6
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 10,
+          "target_c": 140,
+          "hold_min": 2
+        }
+      ],
+      "temp_limit_c": 200,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ]
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID"
+    }
+  ],
+  "valves": null,
+  "notes": "PLOT柱、尾峰因过载常见"
+}

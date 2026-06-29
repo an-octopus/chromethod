@@ -1,0 +1,72 @@
+{
+  "method_id": "GC-STD-004",
+  "source": {
+    "standard": "Restek Application",
+    "name": "等温柱测试混合标准 Rxi-5ms",
+    "version": "GC_EV00819",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "1,6-己二醇",
+      "4-氯苯酚",
+      "壬酸甲酯",
+      "1-癸胺",
+      "十三烷",
+      "1-十一烷醇",
+      "苊烯",
+      "十五烷"
+    ],
+    "analyte_category": "柱效测试混合物(醇/酚/酯/胺/烷烃/PAH)",
+    "matrix": "甲苯溶液",
+    "typical_range": "500 µg/mL"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "甲苯"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "分流",
+    "split_ratio": "100:1",
+    "injection_volume_ul": 1.0,
+    "liner": "鹅颈不分流衬管(4mm)含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "H2",
+    "control": "恒线速度",
+    "linear_velocity_cm_s": 38
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rxi-5ms",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 135,
+          "time_min": null
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 330
+    }
+  ],
+  "valves": null
+}

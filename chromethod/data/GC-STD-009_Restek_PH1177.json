@@ -1,0 +1,104 @@
+{
+  "method_id": "GC-STD-009",
+  "source": {
+    "standard": "USP <467> / Restek Application",
+    "name": "残留溶剂 Class 2 Mix A — Stabilwax 柱法",
+    "version": "GC_PH1177",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "环己烷",
+      "甲基环己烷",
+      "反-1,2-二氯乙烯",
+      "四氢呋喃",
+      "甲醇",
+      "二氯甲烷",
+      "顺-1,2-二氯乙烯",
+      "乙腈",
+      "甲苯",
+      "1,4-二氧六环",
+      "乙苯",
+      "对二甲苯",
+      "间二甲苯",
+      "异丙苯",
+      "邻二甲苯",
+      "氯苯"
+    ],
+    "analyte_category": "残留溶剂 Class 2",
+    "matrix": "水溶液",
+    "typical_range": "USP <467> 限度"
+  },
+  "preparation": {
+    "technique": "顶空(定量环式)",
+    "headspace_instrument": "Tekmar HT3",
+    "headspace_sample_temp": 80,
+    "headspace_equil_time_min": 45,
+    "headspace_needle_temp": 80,
+    "headspace_transfer_line_temp": 105,
+    "headspace_valve_oven_temp": 105,
+    "headspace_standby_flow_ml_min": 50,
+    "headspace_vial_pressure_psi": 20,
+    "headspace_pressurize_min": 5.0,
+    "headspace_loop_pressure_psi": 10,
+    "headspace_loop_fill_min": 2.0,
+    "headspace_inj_time_min": 1.0
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 140,
+    "mode": "分流",
+    "split_ratio": "50:1",
+    "injection_volume_ul": 1000,
+    "liner": "Premium 1.0mm ID 直管衬管",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 2.2,
+    "linear_velocity_cm_s": 36
+  },
+  "columns": [
+    {
+      "phase": "聚乙二醇(PEG)",
+      "brand": "Stabilwax",
+      "length_m": 30,
+      "id_mm": 0.32,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 50,
+          "time_min": 20
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 6,
+          "target_c": 165,
+          "hold_min": 20
+        }
+      ],
+      "temp_limit_c": 270,
+      "flow_range_ml_min": [
+        1.5,
+        3.0
+      ],
+      "temp_limit_isothermal_c": 260
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 250,
+      "h2_flow": 40,
+      "air_flow": 450,
+      "makeup_gas": "N2",
+      "makeup_flow": 45,
+      "data_rate_hz": 20
+    }
+  ],
+  "valves": null
+}

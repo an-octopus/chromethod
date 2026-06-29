@@ -1,0 +1,90 @@
+{
+  "method_id": "GC-STD-008",
+  "source": {
+    "standard": "Restek Application",
+    "name": "血液酒精含量 GC-FID 测定",
+    "version": "GC_PH00239",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "甲醇",
+      "乙醛",
+      "乙醇",
+      "异丙醇",
+      "丙酮",
+      "正丙醇"
+    ],
+    "analyte_category": "血液酒精/极性VOCs",
+    "matrix": "血液(顶空)",
+    "typical_range": "0.1%"
+  },
+  "preparation": {
+    "technique": "顶空(注射器式)",
+    "headspace_sample_vol_ml": 1.0
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 200,
+    "mode": "分流",
+    "injection_volume_ul": 1000,
+    "liner": null,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒压",
+    "linear_velocity_cm_s": 80
+  },
+  "columns": [
+    {
+      "phase": "专有固定相(血液酒精分析)",
+      "brand": "Rtx-BAC1",
+      "length_m": 30,
+      "id_mm": 0.53,
+      "film_um": 3.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 40,
+          "time_min": null
+        }
+      ],
+      "temp_limit_c": 270,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "temp_limit_isothermal_c": 260
+    },
+    {
+      "phase": "专有固定相(血液酒精分析)",
+      "brand": "Rtx-BAC2",
+      "length_m": 30,
+      "id_mm": 0.53,
+      "film_um": 2.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 40,
+          "time_min": null
+        }
+      ],
+      "temp_limit_c": 270,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "temp_limit_isothermal_c": 260
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 200
+    }
+  ],
+  "valves": null
+}

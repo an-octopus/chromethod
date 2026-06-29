@@ -1,0 +1,94 @@
+{
+  "method_id": "GC-STD-007",
+  "source": {
+    "standard": "Restek Application",
+    "name": "大蒜粉中挥发性硫化物 HS-Trap GC-MS 测定",
+    "version": "GC_FF00959",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "烯丙基甲基硫醚",
+      "3,3'-硫代双-1-丙烯",
+      "烯丙基硫醇",
+      "二烯丙基二硫醚"
+    ],
+    "analyte_category": "挥发性硫化物/食品风味",
+    "matrix": "大蒜粉(固体)",
+    "typical_range": "痕量"
+  },
+  "preparation": {
+    "technique": "顶空捕集阱(HS-Trap)",
+    "headspace_instrument": "PerkinElmer Turbomatrix 40",
+    "headspace_sample_temp": 80,
+    "headspace_equil_time_min": 15,
+    "headspace_needle_temp": 90,
+    "headspace_transfer_line_temp": 110,
+    "headspace_inj_temp": 220,
+    "headspace_inj_pressure_psi": 30,
+    "headspace_column_pressure_psi": 15,
+    "headspace_vial_pressurize_min": 1,
+    "headspace_inj_time_min": 0.02,
+    "headspace_withdraw_time_min": 0.2
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 220,
+    "mode": "分流",
+    "split_ratio": "10:1",
+    "liner": null,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 1.5
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rxi-5ms",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 1.0,
+      "guard_column": "IP去活保护柱 5m×0.32mm",
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 35,
+          "time_min": 1
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 15,
+          "target_c": 220,
+          "hold_min": 0
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 45,
+          "target_c": 300,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "MS",
+      "ionization": "EI",
+      "scan_mode": "Scan",
+      "scan_range_mz": "35-350"
+    }
+  ],
+  "valves": null
+}

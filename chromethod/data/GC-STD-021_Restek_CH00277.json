@@ -1,0 +1,88 @@
+{
+  "method_id": "GC-STD-021",
+  "source": {
+    "standard": "Restek Application",
+    "name": "甲酚类/酚类化合物 GC-FID 测定",
+    "version": "GC_CH00277",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "2,6-二甲基苯酚",
+      "邻甲酚",
+      "苯酚",
+      "2,4,6-三甲基苯酚",
+      "2,3,6-三甲基苯酚",
+      "邻乙基苯酚",
+      "2,5-二甲基苯酚",
+      "对甲酚",
+      "2,4-二甲基苯酚",
+      "间甲酚",
+      "C3苯酚(×4)",
+      "2,3-二甲苯酚",
+      "对乙基苯酚",
+      "3,5-二甲苯酚",
+      "间乙基苯酚",
+      "3,4-二甲苯酚"
+    ],
+    "analyte_category": "酚类/甲酚类/酸性化合物",
+    "matrix": "有机溶剂",
+    "typical_range": "—"
+  },
+  "preparation": {
+    "technique": "直接进样"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "分流",
+    "split_ratio": "40:1",
+    "injection_volume_ul": null,
+    "liner": null,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "H2",
+    "control": "恒流",
+    "flow_rate_ml_min": 3.2,
+    "linear_velocity_cm_s": 40
+  },
+  "columns": [
+    {
+      "phase": "聚乙二醇(PEG) 酸改性/去活",
+      "brand": "Stabilwax-DA",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 0.5,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 180,
+          "time_min": 2
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 2,
+          "target_c": 260,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_c": 270,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 260
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 250,
+      "sensitivity": "64×10^-11 AFS"
+    }
+  ],
+  "valves": null
+}

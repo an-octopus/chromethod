@@ -1,0 +1,66 @@
+{
+  "method_id": "GC-STD-035",
+  "source": {
+    "standard": "分析科学学报 2002,18(6)",
+    "name": "茶叶中咖啡因和茶碱 GC-FID 直接测定",
+    "version": "许庆琴等",
+    "url": "kns.cnki.net"
+  },
+  "applicability": {
+    "target_analytes": [
+      "咖啡因",
+      "茶碱"
+    ],
+    "analyte_category": "生物碱/药物",
+    "matrix": "三氯甲烷提取液",
+    "typical_range": "2-900 mg/L"
+  },
+  "preparation": {
+    "technique": "超声提取+液液萃取",
+    "diluent": "三氯甲烷"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "分流",
+    "split_ratio": "1:2",
+    "injection_volume_ul": 1.0,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "N2",
+    "control": "恒流",
+    "flow_rate_ml_min": 25
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "HP-5",
+      "length_m": 10,
+      "id_mm": 0.53,
+      "film_um": 2.65,
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 230,
+          "time_min": null
+        }
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 250
+    }
+  ],
+  "valves": null,
+  "notes": "230°C等温; 大口径柱; 非极性柱对生物碱响应最好"
+}

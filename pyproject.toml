@@ -1,0 +1,12 @@
+[project]
+name = "chromethod"
+version = "0.1.0"
+description = "AIGC — AI 气相色谱方法推荐引擎 (k-NN + Hook)"
+requires-python = ">=3.11"
+
+[tool.setuptools.package-data]
+chromethod = ["data/*.json"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,112 @@
+{
+  "method_id": "GC-STD-006",
+  "source": {
+    "standard": "Restek Application",
+    "name": "残留溶剂测定 (Class 1/2/3)",
+    "version": "",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "丙烷",
+      "异丁烷",
+      "正丁烷",
+      "甲醇",
+      "正戊烷",
+      "乙醇",
+      "乙醚",
+      "丙酮",
+      "异丙醇",
+      "乙腈",
+      "二氯甲烷",
+      "正己烷",
+      "乙酸乙酯",
+      "氯仿",
+      "环己烷",
+      "苯",
+      "1,2-二氯乙烷",
+      "正庚烷",
+      "三氯乙烯",
+      "甲苯",
+      "间二甲苯",
+      "对二甲苯",
+      "邻二甲苯"
+    ],
+    "analyte_category": "残留溶剂/VOCs",
+    "matrix": "N,N-二甲基乙酰胺溶液",
+    "typical_range": "10 µg/mL"
+  },
+  "preparation": {
+    "technique": "顶空(注射器式)",
+    "headspace_instrument": "PAL RTC",
+    "headspace_sample_temp": 80,
+    "headspace_equil_time_min": 45,
+    "headspace_syringe_temp": 150,
+    "headspace_inj_speed_ul_s": 1700
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 280,
+    "mode": "分流",
+    "split_ratio": "10:1",
+    "split_vent_flow_ml_min": 20,
+    "injection_volume_ul": 250,
+    "liner": "Topaz 1.8mm ID 直管/SPME衬管",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 2.0,
+    "linear_velocity_cm_s": 40.6
+  },
+  "columns": [
+    {
+      "phase": "6%氰丙基苯基-94%二甲基聚硅氧烷",
+      "brand": "Rxi-624Sil MS",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 1.4,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 30,
+          "time_min": 6
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 15,
+          "target_c": 85,
+          "hold_min": 2
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 35,
+          "target_c": 250,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_c": 290,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 280
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 320,
+      "h2_flow": 45,
+      "air_flow": 450,
+      "makeup_gas": "N2",
+      "makeup_flow": 40,
+      "data_rate_hz": 20
+    }
+  ],
+  "valves": null
+}

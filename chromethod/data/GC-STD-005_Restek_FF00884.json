@@ -1,0 +1,67 @@
+{
+  "method_id": "GC-STD-005",
+  "source": {
+    "standard": "Restek Application",
+    "name": "胆固醇衍生化 GC-FID 测定",
+    "version": "GC_FF00884",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "5-α-胆甾烷(内标)",
+      "胆固醇(TMS衍生化)"
+    ],
+    "analyte_category": "甾醇类/衍生化",
+    "matrix": "正己烷溶液",
+    "typical_range": "50-150 ng on-column"
+  },
+  "preparation": {
+    "technique": "衍生化",
+    "diluent": "正己烷"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "分流",
+    "split_ratio": "20:1",
+    "injection_volume_ul": 1.0,
+    "liner": "锥形不分流衬管(4mm)含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒压",
+    "pressure_psi": 9.7,
+    "linear_velocity_cm_s": 24
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rxi-5ms",
+      "length_m": 15,
+      "id_mm": 0.25,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 300,
+          "time_min": 10
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 340
+    }
+  ],
+  "valves": null
+}

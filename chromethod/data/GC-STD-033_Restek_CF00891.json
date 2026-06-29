@@ -1,0 +1,81 @@
+{
+  "method_id": "GC-STD-033",
+  "source": {
+    "standard": "Restek Application",
+    "name": "大麻素类 GC-MS 测定",
+    "version": "GC_CF00891",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "大麻二酚(CBD)",
+      "Δ8-THC",
+      "Δ9-THC",
+      "大麻酚(CBN)",
+      "11-羟基-THC",
+      "THC-COOH"
+    ],
+    "analyte_category": "药物/大麻素/毒理",
+    "matrix": "甲醇溶液",
+    "typical_range": "1000 µg/mL"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "甲醇"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "分流",
+    "split_ratio": "25:1",
+    "injection_volume_ul": 1.0,
+    "liner": "单锥形衬管(4mm)碱去活含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 1.0
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rxi-5ms",
+      "length_m": 12,
+      "id_mm": 0.2,
+      "film_um": 0.33,
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 40,
+          "time_min": 0
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 20,
+          "target_c": 340,
+          "hold_min": 5
+        }
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "MS",
+      "transfer_line_temp_c": 280,
+      "ionization": "EI",
+      "analyzer": "Quadrupole",
+      "scan_mode": "Scan",
+      "scan_range_mz": "100-550"
+    }
+  ],
+  "valves": null
+}

@@ -1,0 +1,69 @@
+{
+  "method_id": "GC-STD-015",
+  "source": {
+    "standard": "Restek Application",
+    "name": "永久气体(He/Ar/O₂/N₂/CH₄/CO) TCD 测定",
+    "version": "GC_PC1347",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "氦",
+      "氩",
+      "氧",
+      "氮",
+      "甲烷",
+      "一氧化碳"
+    ],
+    "analyte_category": "永久气体",
+    "matrix": "气体(混合标气)",
+    "typical_range": "% 级"
+  },
+  "preparation": {
+    "technique": "注射器直接气体进样"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 150,
+    "mode": "分流",
+    "split_ratio": "10:1",
+    "injection_volume_ul": 30,
+    "liner": "Topaz 2.0mm ID 直管衬管",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "H2",
+    "control": "恒压",
+    "pressure_psi": 1.7
+  },
+  "columns": [
+    {
+      "phase": "分子筛 5A (气固色谱)",
+      "brand": "Rt-Msieve 5A",
+      "length_m": 15,
+      "id_mm": 0.53,
+      "film_um": 50,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 30,
+          "time_min": 10
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "TCD",
+      "temp_c": 200
+    }
+  ],
+  "valves": null
+}

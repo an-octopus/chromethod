@@ -1,0 +1,79 @@
+{
+  "method_id": "GC-STD-024",
+  "source": {
+    "standard": "Restek Application",
+    "name": "橄榄油脂肪酸甲酯 GC-FID 测定 (WAX柱)",
+    "version": "GC_FF1265",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "C16:0棕榈酸甲酯",
+      "C16:1棕榈油酸甲酯",
+      "C18:0硬脂酸甲酯",
+      "C18:1油酸甲酯",
+      "C18:2亚油酸甲酯",
+      "C18:3亚麻酸甲酯",
+      "C20:0花生酸甲酯",
+      "C20:1"
+    ],
+    "analyte_category": "脂肪酸甲酯(FAMEs)/油脂",
+    "matrix": "正己烷溶液",
+    "typical_range": "wt.% (0.4-73%)"
+  },
+  "preparation": {
+    "technique": "衍生化(甲酯化, 甲醇/HCl)",
+    "diluent": "正己烷"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 225,
+    "mode": "分流",
+    "split_ratio": "100:1",
+    "injection_volume_ul": 1.0,
+    "liner": "Topaz 4mm ID 直管衬管含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "H2",
+    "control": "恒流",
+    "flow_rate_ml_min": 2.0
+  },
+  "columns": [
+    {
+      "phase": "聚乙二醇(PEG)",
+      "brand": "Stabilwax",
+      "length_m": 60,
+      "id_mm": 0.25,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 120,
+          "time_min": 0.5
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 6,
+          "target_c": 250,
+          "hold_min": 15
+        }
+      ],
+      "temp_limit_c": 270,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 260
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 250
+    }
+  ],
+  "valves": null
+}

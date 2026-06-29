@@ -1,0 +1,120 @@
+{
+  "method_id": "GC-STD-010",
+  "source": {
+    "standard": "Restek Application / EPA 8082A",
+    "name": "有机氯农药/PCBs/BFRs GCxGC-ECD 测定",
+    "version": "GC_EV1243",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "有机氯农药(OCPs)",
+      "多氯联苯(PCBs)",
+      "多溴联苯醚(PBDEs)"
+    ],
+    "analyte_category": "有机氯农药/PCBs/溴代阻燃剂",
+    "matrix": "异辛烷溶液",
+    "typical_range": "250 pg/µL (ppt级)"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "异辛烷"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "不分流",
+    "splitless_hold_min": 1.0,
+    "purge_flow_ml_min": 20,
+    "injection_volume_ul": 1.0,
+    "liner": "Premium 4mm 单锥形衬管含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "校正恒流",
+    "flow_rate_ml_min": 2.0
+  },
+  "columns": [
+    {
+      "phase": "专有低流失中极性固定相",
+      "brand": "Rxi-XLB",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 0.25,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 80,
+          "time_min": 1
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 10,
+          "target_c": 120,
+          "hold_min": 0
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 3,
+          "target_c": 300,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_c": 350,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 340
+    },
+    {
+      "phase": "50%苯基-50%二甲基聚硅氧烷",
+      "brand": "Rxi-17Sil MS",
+      "length_m": 1,
+      "id_mm": 0.15,
+      "film_um": 0.15,
+      "role": "第二维柱(GCxGC)",
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 85,
+          "time_min": 1
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 10,
+          "target_c": 125,
+          "hold_min": 0
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 3,
+          "target_c": 305,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_c": 350,
+      "flow_range_ml_min": [
+        0.2,
+        0.8
+      ],
+      "temp_limit_isothermal_c": 340
+    }
+  ],
+  "detectors": [
+    {
+      "type": "ECD",
+      "temp_c": 325,
+      "data_rate_hz": 50
+    }
+  ],
+  "valves": null,
+  "notes": "GCxGC全二维色谱,调制周期3.5s"
+}

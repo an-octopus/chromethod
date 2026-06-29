@@ -1,0 +1,89 @@
+{
+  "method_id": "GC-STD-030",
+  "source": {
+    "standard": "ASTM D5623 / Restek",
+    "name": "汽油中硫化物 GC-SCD 测定",
+    "version": "GC_PC1271",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "乙硫醇",
+      "二甲硫醚",
+      "二硫化碳",
+      "异丙硫醇",
+      "叔丁硫醇",
+      "正丙硫醇",
+      "乙基甲基硫醚",
+      "仲丁硫醇",
+      "噻吩",
+      "异丁硫醇",
+      "二乙硫醚",
+      "正丁硫醇",
+      "二甲基二硫醚",
+      "2-甲基噻吩",
+      "3-甲基噻吩",
+      "二乙基二硫醚",
+      "苯并噻吩",
+      "3-甲基苯并噻吩"
+    ],
+    "analyte_category": "硫化物/汽油",
+    "matrix": "有机溶剂",
+    "typical_range": "20-100 µg/mL"
+  },
+  "preparation": {
+    "technique": "直接进样"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 275,
+    "mode": "分流",
+    "split_ratio": "10:1",
+    "split_vent_flow_ml_min": 24,
+    "injection_volume_ul": 0.2,
+    "liner": "4mm杯型衬管 Siltek去活",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 2.4,
+    "linear_velocity_cm_s": 38
+  },
+  "columns": [
+    {
+      "phase": "100%二甲基聚硅氧烷",
+      "brand": "Rtx-1",
+      "length_m": 30,
+      "id_mm": 0.32,
+      "film_um": 4.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 30,
+          "time_min": 2
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 10,
+          "target_c": 200,
+          "hold_min": 10
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        1.5,
+        3.0
+      ]
+    }
+  ],
+  "detectors": [
+    {
+      "type": "SCD",
+      "temp_c": 800
+    }
+  ],
+  "valves": null
+}

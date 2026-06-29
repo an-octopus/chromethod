@@ -1,0 +1,79 @@
+{
+  "method_id": "GC-STD-031",
+  "source": {
+    "standard": "EPA 619 / Restek",
+    "name": "三嗪除草剂 GC-NPD 测定",
+    "version": "GC_EV00058",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "阿特拉通",
+      "扑灭通",
+      "特丁津",
+      "莠去津",
+      "西玛津",
+      "扑草净",
+      "仲丁通",
+      "特丁净",
+      "莠灭净",
+      "西草净",
+      "扑草净"
+    ],
+    "analyte_category": "三嗪除草剂/含氮杂环",
+    "matrix": "有机溶剂",
+    "typical_range": "50 ng"
+  },
+  "preparation": {
+    "technique": "直接进样"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "直接",
+    "injection_volume_ul": 0.5,
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒线速度",
+    "linear_velocity_cm_s": 40
+  },
+  "columns": [
+    {
+      "phase": "50%苯基-50%二甲基聚硅氧烷",
+      "brand": "Rtx-50",
+      "length_m": 30,
+      "id_mm": 0.53,
+      "film_um": 0.5,
+      "temp_limit_c": 350,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 150,
+          "time_min": 0
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 4,
+          "target_c": 250,
+          "hold_min": 5
+        }
+      ],
+      "temp_limit_isothermal_c": 340
+    }
+  ],
+  "detectors": [
+    {
+      "type": "NPD",
+      "temp_c": 275
+    }
+  ],
+  "valves": null
+}

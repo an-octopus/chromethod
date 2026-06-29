@@ -1,0 +1,91 @@
+{
+  "method_id": "GC-STD-034",
+  "source": {
+    "standard": "EPA 525.2 / Restek",
+    "name": "SVOCs+有机磷农药 GC-MS 测定",
+    "version": "GC_EV1510",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "茚并[1,2,3-cd]芘",
+      "二苯并[a,h]蒽",
+      "苯并[ghi]苝",
+      "有机磷农药(欧标混标)"
+    ],
+    "analyte_category": "SVOCs/PAHs/有机磷农药",
+    "matrix": "丙酮溶液",
+    "typical_range": "1-20 µg/mL"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "丙酮"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "不分流",
+    "splitless_hold_min": 3.0,
+    "purge_flow_ml_min": 15,
+    "injection_volume_ul": 1.0,
+    "liner": "Topaz单锥形衬管(4mm)含石英棉",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 0.84,
+    "linear_velocity_cm_s": 40.8
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷(MS级)",
+      "brand": "Rxi-SVOCms",
+      "length_m": 20,
+      "id_mm": 0.15,
+      "film_um": 0.15,
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        0.2,
+        0.8
+      ],
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 45,
+          "time_min": 0.5
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 30,
+          "target_c": 260,
+          "hold_min": 0
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 4,
+          "target_c": 330,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "MS",
+      "transfer_line_temp_c": 250,
+      "source_temp_c": 230,
+      "quad_temp_c": 150,
+      "solvent_delay_min": 1.5,
+      "ionization": "EI",
+      "analyzer": "Quadrupole",
+      "scan_mode": "Scan",
+      "scan_range_mz": "50-550"
+    }
+  ],
+  "valves": null
+}

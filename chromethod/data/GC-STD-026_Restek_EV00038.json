@@ -1,0 +1,76 @@
+{
+  "method_id": "GC-STD-026",
+  "source": {
+    "standard": "EPA 607 / Restek Application",
+    "name": "亚硝胺类 EPA 607 GC-FID 测定",
+    "version": "GC_EV00038",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "N-亚硝基二甲胺(NDMA)",
+      "N-亚硝基二乙胺(NDEA)",
+      "N-亚硝基二正丙胺(NDPA)",
+      "二苯胺(N-亚硝基二苯胺分解产物)"
+    ],
+    "analyte_category": "亚硝胺类",
+    "matrix": "甲醇溶液",
+    "typical_range": "50 ng/µL"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "甲醇"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 240,
+    "mode": "不分流",
+    "injection_volume_ul": 1.0,
+    "liner": "Uniliner衬管",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "H2",
+    "control": "恒线速度",
+    "linear_velocity_cm_s": 80,
+    "flow_rate_ml_min": 10
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rtx-5",
+      "length_m": 15,
+      "id_mm": 0.53,
+      "film_um": 1.5,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 40,
+          "time_min": 4
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 20,
+          "target_c": 240,
+          "hold_min": null
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        3.0,
+        7.0
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "FID",
+      "temp_c": 240,
+      "sensitivity": "128×10^-11 AFS"
+    }
+  ],
+  "valves": null
+}

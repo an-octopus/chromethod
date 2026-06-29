@@ -1,0 +1,94 @@
+{
+  "method_id": "GC-STD-001",
+  "source": {
+    "standard": "Restek Application",
+    "name": "呋喃及烷基呋喃类 GC-MS 测定",
+    "version": "FS0613",
+    "url": "https://www.restek.com/cn/chromatogram-detail/GC_FS0613"
+  },
+  "applicability": {
+    "target_analytes": [
+      "呋喃",
+      "2-甲基呋喃",
+      "3-甲基呋喃",
+      "2-乙基呋喃",
+      "2,5-二甲基呋喃",
+      "2,3-二甲基呋喃",
+      "2-丁基呋喃",
+      "2-戊基呋喃"
+    ],
+    "analyte_category": "呋喃类/VOCs",
+    "matrix": "甲醇溶液",
+    "typical_range": "ppm"
+  },
+  "preparation": {
+    "technique": "直接进样",
+    "diluent": "甲醇"
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 280,
+    "mode": "分流",
+    "split_ratio": "10:1",
+    "split_vent_flow_ml_min": 14,
+    "injection_volume_ul": 1.0,
+    "liner": "Topaz 3.5mm 直管衬管(含石英棉)",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 1.4
+  },
+  "columns": [
+    {
+      "phase": "6%氰丙基苯基-94%二甲基聚硅氧烷",
+      "brand": "Rxi-624Sil MS",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 1.4,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 35,
+          "time_min": 3
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 8,
+          "target_c": 75,
+          "hold_min": 0
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 25,
+          "target_c": 200,
+          "hold_min": 1
+        }
+      ],
+      "temp_limit_c": 290,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 280
+    }
+  ],
+  "detectors": [
+    {
+      "type": "MS",
+      "instrument": "Shimadzu GCMS-QP2020 NX",
+      "transfer_line_temp_c": 280,
+      "source_temp_c": 280,
+      "quad_temp_c": 280,
+      "solvent_delay_min": 2.5,
+      "ionization": "EI",
+      "analyzer": "Quadrupole",
+      "scan_mode": "SIM"
+    }
+  ],
+  "valves": null
+}

@@ -1,0 +1,105 @@
+{
+  "method_id": "GC-STD-016",
+  "source": {
+    "standard": "Restek Application",
+    "name": "食品包装挥发物 吹扫捕集 GC-MS 测定",
+    "version": "GC_FF00457",
+    "url": ""
+  },
+  "applicability": {
+    "target_analytes": [
+      "异丙醇",
+      "二氯甲烷",
+      "2-甲基-1-丙醇",
+      "四氢呋喃",
+      "苯",
+      "甲苯",
+      "己醛",
+      "糠醛",
+      "4-庚酮(IS)",
+      "丁醚",
+      "苯乙烯",
+      "十二烷"
+    ],
+    "analyte_category": "食品包装挥发物/VOCs",
+    "matrix": "食品包装材料",
+    "typical_range": "痕量"
+  },
+  "preparation": {
+    "technique": "吹扫捕集(Pur&Trap)",
+    "pt_instrument": "Tekmar LSC-3100",
+    "pt_trap_type": "Vocarb 3000 (Type K)",
+    "pt_purge_temp_c": 60,
+    "pt_purge_time_min": 10,
+    "pt_purge_flow_ml_min": 40,
+    "pt_dry_purge_min": 3,
+    "pt_desorb_preheat_c": 220,
+    "pt_desorb_temp_c": 245,
+    "pt_desorb_time_min": 2,
+    "pt_bake_temp_c": 230,
+    "pt_bake_time_min": 6
+  },
+  "inlet": {
+    "type": "SSL",
+    "temp_c": 250,
+    "mode": "分流",
+    "split_ratio": "20:1",
+    "liner": "1mm ID",
+    "max_temp_c": 400
+  },
+  "carrier_gas": {
+    "type": "He",
+    "control": "恒流",
+    "flow_rate_ml_min": 1.0,
+    "linear_velocity_cm_s": 36
+  },
+  "columns": [
+    {
+      "phase": "5%苯基-95%二甲基聚硅氧烷",
+      "brand": "Rtx-5MS",
+      "length_m": 30,
+      "id_mm": 0.25,
+      "film_um": 1.0,
+      "oven_program": [
+        {
+          "step": 0,
+          "type": "hold",
+          "temp_c": 50,
+          "time_min": 0
+        },
+        {
+          "step": 1,
+          "type": "ramp",
+          "rate": 3,
+          "target_c": 92,
+          "hold_min": 0
+        },
+        {
+          "step": 2,
+          "type": "ramp",
+          "rate": 20,
+          "target_c": 220,
+          "hold_min": 1
+        }
+      ],
+      "temp_limit_c": 360,
+      "flow_range_ml_min": [
+        0.8,
+        1.5
+      ],
+      "temp_limit_isothermal_c": 350
+    }
+  ],
+  "detectors": [
+    {
+      "type": "MS",
+      "source_temp_c": 280,
+      "ionization": "EI",
+      "electron_energy_ev": 70,
+      "analyzer": "Quadrupole",
+      "scan_mode": "Scan",
+      "scan_range_mz": "35-260"
+    }
+  ],
+  "valves": null
+}
